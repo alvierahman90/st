@@ -16,7 +16,9 @@ options:
 	@echo "CC      = $(CC)"
 
 config.h:
-	cp config.def.h config.h
+	sed "s/HOSTNAME/$(shell cat /etc/hostname)/; \
+		s/FONT/\"$(shell ../getfont.sh freedesktop)\"/" \
+		config.def.h > config.h
 
 .c.o:
 	$(CC) $(STCFLAGS) -c $<

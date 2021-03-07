@@ -13,6 +13,8 @@ Installation
 Edit config.mk to match your local setup (st is installed into
 the /usr/local namespace by default).
 
+Copy config.def.h to config.h and replace `FONT` with font of choice.
+
 Afterwards enter the following command to build and install st (if
 necessary as root):
 
